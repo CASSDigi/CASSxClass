@@ -47,3 +47,6 @@ create policy "Public can read products"
   on products for select
   to anon
   using (true);
+
+-- Admin panel policies, push notification support, and site settings live in
+-- supabase-schema-admin.sql — run that file second, after this one.
