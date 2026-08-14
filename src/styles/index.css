@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  ::selection {
+    background-color: #C6A15B;
+    color: #0B1E3D;
+  }
+  a, button {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply font-label text-[11px] tracking-widest2 uppercase text-gold-dark;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-navy text-ivory px-7 py-3.5 text-sm font-label tracking-wide uppercase
+    hover:bg-navy-light transition-colors duration-300 active:scale-[0.98];
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 border border-navy/30 text-navy px-7 py-3.5 text-sm font-label tracking-wide uppercase
+    hover:border-navy hover:bg-navy hover:text-ivory transition-all duration-300 active:scale-[0.98];
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 bg-gold text-navy px-7 py-3.5 text-sm font-label font-semibold tracking-wide uppercase
+    hover:bg-gold-light transition-colors duration-300 active:scale-[0.98];
+  }
+
+  /* Signature "x" crossing divider, echoes the CASSxClass mark */
+  .x-divider {
+    @apply relative flex items-center justify-center gap-4 my-2;
+  }
+  .x-divider::before,
+  .x-divider::after {
+    content: "";
+    @apply h-px flex-1 bg-gold/40;
+  }
+  .x-mark {
+    @apply font-display italic text-gold text-lg leading-none;
+  }
+
+  .container-x {
+    @apply max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12;
+  }
+
+  .card-hover {
+    @apply transition-all duration-500 ease-out;
+  }
+}
